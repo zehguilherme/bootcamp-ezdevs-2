@@ -1,0 +1,3 @@
+class UserNotExists extends Error {
+    
+}
