@@ -44,6 +44,18 @@ module.exports = {
     },
 
     async show(req,res) {
-        const
+        const { userId } = req.params;
+
+        try {
+            const user = await Dev.findOne({
+                _id: userId
+            });
+        } catch (error) {
+            throw new UserNotExists();
+        }
+
+        res.json({
+            teste: userId
+        })
     }
 }

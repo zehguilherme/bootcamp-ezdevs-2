@@ -5,6 +5,7 @@ const DislikeController = require('./controllers/DislikeController');
 const MatchController = require('./controllers/MatchController');
 const routes = express.Router();
 
+routes.get('/devs:userId', DevController.show);
 routes.get('/devs', DevController.index);
 routes.post('/devs', DevController.store);
 routes.post('/devs/:devId/likes', LikeController.store);
